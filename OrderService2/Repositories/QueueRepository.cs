@@ -15,7 +15,7 @@ public class QueueRepository : IQueueRepository
     {
         var toRemove = _queue.First(i => i.Client.Id == queueItemDto.Client.Id 
                                          && i.Product.Name == queueItemDto.Product.Name);
-        _queue.Remove(queueItemDto);
+        _queue.Remove(toRemove);
         _queue.Add(queueItemDto);
     }
     
